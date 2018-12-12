@@ -1,0 +1,52 @@
+<template>
+
+    <lightning-card icon-name="standard:feed">
+        <h1 slot="title">Stock</h1>
+        <div slot="actions">
+            <lightning-layout>
+                <lightning-layout-item>
+                    <input id="searchInput" type="text" class="slds-input symbol-input" onkeyup={handleSymbolChange} />
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <lightning-button label="Get Stock" onclick={getStock}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+
+        <div if:false={error}>
+            <div if:true={stock} class="content">
+                <p class="symbol slds-text-heading_medium">{stock.symbol}</p>
+                <p class="price slds-text-heading_large">
+                    <lightning-formatted-number value={stock.price} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                </p>
+                <lightning-layout horizontal-align="center">
+                    <lightning-layout-item padding="horizontal-small">
+                        Open:<br />
+                        <lightning-formatted-number value={stock.open} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="horizontal-small">
+                        High:<br />
+                        <lightning-formatted-number value={stock.high} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="horizontal-small">
+                        Low:<br />
+                        <lightning-formatted-number value={stock.low} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="horizontal-small">
+                        Change:<br />
+                        <lightning-formatted-number value={stock.changePercent} format-style="percent"
+                            minimum-fraction-digits="2"></lightning-formatted-number>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <div if:false={stock} class="content">
+                No stock symbol entered.
+            </div>
+        </div>
+        <div if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </div>
+
+    </lightning-card>
+
+</template>

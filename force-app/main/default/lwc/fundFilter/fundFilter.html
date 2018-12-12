@@ -1,0 +1,13 @@
+<template>
+
+    <lightning-card title="Filters" icon-name="utility:feed">
+
+        <div class="content">
+            <c-search-bar onchange={handleSearchKeyChange}></c-search-bar>
+            <c-asset-class-selector onchange={handleAssetClassChange}></c-asset-class-selector>
+            <c-sector-selector onchange={handleSectorChange}></c-sector-selector>
+        </div>
+
+    </lightning-card>
+
+</template>

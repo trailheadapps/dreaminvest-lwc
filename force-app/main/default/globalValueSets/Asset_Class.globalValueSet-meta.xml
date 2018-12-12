@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Bond</fullName>
+        <default>false</default>
+        <label>Bond</label>
+    </customValue>
+    <customValue>
+        <fullName>Commodity</fullName>
+        <default>false</default>
+        <label>Commodity</label>
+    </customValue>
+    <customValue>
+        <fullName>Currency</fullName>
+        <default>false</default>
+        <label>Currency</label>
+    </customValue>
+    <customValue>
+        <fullName>Equity</fullName>
+        <default>false</default>
+        <label>Equity</label>
+    </customValue>
+    <customValue>
+        <fullName>Fixed Income</fullName>
+        <default>false</default>
+        <label>Fixed Income</label>
+    </customValue>
+    <customValue>
+        <fullName>Multi-Asset</fullName>
+        <default>false</default>
+        <label>Multi-Asset</label>
+    </customValue>
+    <customValue>
+        <fullName>Volatility</fullName>
+        <default>false</default>
+        <label>Volatility</label>
+    </customValue>
+    <masterLabel>Asset Class</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

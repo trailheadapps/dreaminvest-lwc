@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="percentReturnRange">
+    <apiVersion>45.0</apiVersion>
+    <isExposed>false</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property name="label" label="Label" type="String"></property>
+            <property name="filterName" label="Filter" datasource="ytd-return, 1-year-return, 2-year-return, 5-year-return" type="String"></property>
+            <property name="min" label="Min Value" default="-30" type="String"></property>
+            <property name="max" label="Max Value" default="30" type="String"></property>
+            <property name="step" label="Step" default="1" type="String"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

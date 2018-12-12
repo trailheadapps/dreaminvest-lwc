@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+
+    <aura:attribute name="componentHeight" type="String" default="600px"/>
+
+    <div style="{! 'height: ' + v.componentHeight}">
+
+        <lightning:container aura:id="jsApp" src="{!$Resource.trader_desktop + '/index.html'}"
+            onmessage="{!c.handleMessage}"
+            onerror="{!c.handleError}"/>
+
+    </div>
+
+</aura:component>

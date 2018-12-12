@@ -1,0 +1,33 @@
+.Bond {
+    background-color: #D8BE5F;
+}
+
+.Commodity {
+    background-color: #CFD05C;
+}
+
+.Currency {
+    background-color: #F77E75;
+}
+
+.Equity {
+    background-color: #E9AF67;
+}
+
+.Fixed.Income {
+    background-color: #3ABEB1;
+}
+
+.Multi-Asset {
+    background-color: #659AD5;
+}
+
+.Volatility {
+    background-color: #5AB0D2;
+}
+
+.symbol {
+    font-size: 1.1rem;
+    font-weight: 300;
+    width: 60px;
+}

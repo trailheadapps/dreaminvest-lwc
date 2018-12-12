@@ -1,0 +1,18 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "DreamInvestLWC",
+            "versionName": "Spring '19",
+            "versionNumber": "1.0.0.NEXT"
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "45.0",
+    "packageAliases": {
+        "DreamInvestLWC": "0HoB0000000GmiEKAS",
+        "DreamInvestLWC@1.0.0-1": "04tB0000000cPEmIAM"
+    }
+}

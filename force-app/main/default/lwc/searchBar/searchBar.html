@@ -1,0 +1,12 @@
+<template>
+
+    <lightning-layout vertical-align="center">
+        <lightning-layout-item flexibility="grow">
+                <input id="searchInput" type="text" class="slds-input" value={searchKey} placeholder="Search mutual funds" onkeypress={handleKeyPress} onchange={handleChange}/>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-button-icon icon-name="utility:close" variant="bare" onclick={handleClear} class="slds-m-left_xx-small"></lightning-button-icon>
+            </lightning-layout-item>
+    </lightning-layout>
+
+</template>

@@ -1,0 +1,28 @@
+<template>
+
+    <div>
+        <template if:true={wiredFunds.data}>
+            <template if:true={wiredFunds.data.funds.length}>
+                <ul class="slds-grid slds-grid_pull-padded slds-wrap">
+                    <template for:each={wiredFunds.data.funds} for:item="fund">
+                        <c-fund-tile key={fund.Id} fund={fund} class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3"
+                            onpeekenter={handlePeekEnter} onpeekleave={handlePeekLeave}></c-fund-tile>
+                    </template>
+                </ul>
+
+                <c-paginator page={page} pages={wiredFunds.data.pages} label="funds" onpreviouspage={handlePagePrevious} onnextpage={handlePageNext}></c-paginator>
+
+                <c-fund-info-popup></c-fund-info-popup>
+            </template>
+            <template if:false={wiredFunds.data.funds.length}>
+                No funds are matching the selected criteria.
+            </template>
+        </template>
+
+        <template if:true={wiredFunds.error}>
+            <c-error-panel errors={wiredFunds.error}></c-error-panel>
+        </template>
+
+    </div>
+
+</template>

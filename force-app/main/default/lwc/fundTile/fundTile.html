@@ -1,0 +1,16 @@
+<template>
+
+    <li onmouseover={handleMouseOver} onmouseout={handleMouseOut}>
+        <a onclick={handleFundSelected} class="slds-app-launcher__tile slds-text-link_reset slds-truncate">
+            <div class={avatarClass}>
+                <span>{fund.Abbreviation__c}</span>
+            </div>
+            <div class="slds-app-launcher__tile-body">
+                <span class="slds-text-link">{fund.Name}</span>
+                <p>{fund.Sector__r.Name}</p>
+                <c-rating rating={fund.Rating__c}></c-rating>
+            </div>
+        </a>
+	</li>
+
+</template>

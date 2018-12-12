@@ -1,0 +1,66 @@
+<template>
+
+    <lightning-card icon-name="custom:custom57">
+        <h1 slot="title">Mortgage Amortization</h1>
+
+        <div class="input">
+            <lightning-layout vertical-align="end">
+                <lightning-layout-item>
+                    <lightning-input id="principal" type="number" label="Principal:" value={defaultPrincipal} onchange={handlePrincipalChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="horizontal-small">
+                    <lightning-combobox name="select1" label="Years:" required onchange={handleYearChange} options={yearOptions}
+                        value="20"></lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <lightning-input id="rate" type="text" label="Rate:" value={defaultRate} onchange={handleRateChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="horizontal-small">
+                    <lightning-button label="Calculate" onclick={calculateAmortization}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <div class="result">
+                Monthly Payment: <lightning-formatted-number value={monthlyPayment} format-style="currency"
+                    currency-code="USD"></lightning-formatted-number>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th class="principal">Principal</th>
+                        <th class="stretch"></th>
+                        <th class="interest">Interest</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={amortization} for:item="year" for:index="index">
+                        <tr key={year.id}>
+                            <td>{year.id}</td>
+                            <td class="principal">
+                                <lightning-formatted-number value={year.principalY} format-style="currency"
+                                    currency-code="USD"></lightning-formatted-number>
+                            </td>
+                            <td class="stretch">
+                                <div class="flex">
+                                    <div class="bar principal" style={year.cssClasses.principal}></div>
+                                    <div class="bar interest" style={year.cssClasses.interest}></div>
+                                </div>
+                            </td>
+                            <td class="interest">
+                                <lightning-formatted-number value={year.interestY} format-style="currency"
+                                    currency-code="USD"></lightning-formatted-number>
+                            </td>
+                            <td>
+                                <lightning-formatted-number value={year.balance} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+
+</template>

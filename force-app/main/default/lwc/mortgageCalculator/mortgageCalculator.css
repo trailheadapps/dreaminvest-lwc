@@ -1,0 +1,13 @@
+.result {
+    font-weight: 300;
+    font-size: 20px;
+    display: block;
+    color: #0288D1;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.input {
+	margin:16px;
+	text-align:left;
+}

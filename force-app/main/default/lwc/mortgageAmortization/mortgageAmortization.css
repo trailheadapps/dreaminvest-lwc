@@ -1,0 +1,68 @@
+table {
+    border-collapse: collapse;
+}
+
+td {
+    font-family: menlo;
+	font-weight: 300;
+}
+
+td .principal {
+    color: #0288D1;
+}
+
+.interest {
+    color: #EF6C00;
+}
+
+th {
+    text-align: right;
+    font-weight: 600;
+}
+
+th,
+td {
+    text-align: right;
+    border: solid 1px #EEEEEE !important;
+    padding: 1px 4px;
+	vertical-align: middle;
+}
+
+.bar {
+    display: inline-block;
+    border: none;
+    height: 8px;
+}
+
+.bar.principal {
+    background-color: #0288D1;
+    margin-right:1px;
+}
+
+.bar.interest {
+    background-color: #EF6C00;
+    margin-left:1px;
+}
+
+.stretch {
+    width: 100%;
+    padding-left:0;
+    padding-right:0;
+}
+
+.flex {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.input {
+    padding: 0 12px;
+}
+
+.result {
+    font-weight: 300;
+    font-size: 20px;
+    display: block;
+    color: #0288D1;
+    margin: 10px 0;
+}

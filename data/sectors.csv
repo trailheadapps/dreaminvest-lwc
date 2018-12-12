@@ -1,0 +1,42 @@
+Sector_Id__c,Name
+0,Agriculture
+1,Alternative Investments
+2,Asia
+3,Biotech
+4,Bonds
+5,Commodities
+6,Consumer Discretionary
+7,Consumer Non-Cyclical
+8,Consumer Services
+9,Consumer Staples
+10,Currency
+11,Defense
+12,Emerging Markets
+13,Energy
+14,Environmental
+15,Europe
+16,Financial Services
+17,Grains
+18,Healthcare
+19,Income
+20,Industrial
+21,International
+22,Large Cap
+23,Managed ETFs
+24,Materials
+25,Meats
+26,Metals
+27,Mid Cap
+28,Mixed Asset
+29,Multi Cap
+30,Natural Resources
+31,Non Taxable
+32,Power
+33,Precious Metal
+34,Real Estate
+35,Small Cap
+36,Taxable Bonds
+37,Technology
+38,Telecommunications
+39,Transportation
+40,Utilities

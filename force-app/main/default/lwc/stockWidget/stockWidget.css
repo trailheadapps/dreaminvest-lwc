@@ -1,0 +1,19 @@
+.content {
+    padding: 12px;
+    text-align: center;
+    height: 150px;
+}
+
+.symbol {
+    text-align: center;
+}
+
+.price {
+    text-align: center;
+    padding: 6px 0 18px 0;
+}
+
+.symbol-input {
+    width: 70px;
+    margin-right: 10px;
+}

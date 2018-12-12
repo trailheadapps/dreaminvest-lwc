@@ -1,0 +1,8 @@
+:host {
+    border: none;
+    box-shadow: none;
+}
+
+.content {
+	padding: 12px;
+}
