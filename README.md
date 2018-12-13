@@ -15,6 +15,7 @@ DreamInvest is a sample financial services application. It features a mutual fun
 -   Installation Instructions
     -   [Installing DreamInvest using Salesforce DX](#installing-dreaminvest-using-salesforce-dx)
     -   [Installing DreamInvest using an unlocked package](#installing-dreaminvest-using-an-unlocked-package)
+    -   [Completing the Installation](#completing-the-installation)
 -   [Optional installation instructions](#optional-installation-instructions)
 
 ## Installation Instructions
@@ -31,7 +32,7 @@ There are two ways to install DreamInvest:
     - Sign up for a Spring '19 pre-release org and enable Dev Hub functionality
     - Install the pre-release version of the Salesforce CLI
     - Install Visual Studio Code
-    - Install the Visual Studio Code Salesforce extensions, including the LWC extension
+    - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
 1. Authenticate with your hub org (if not already done). The command below uses the `-a` flag to assign an alias that can be used in other commands:
 
@@ -42,8 +43,8 @@ There are two ways to install DreamInvest:
 1. Clone this repository:
 
     ```zsh
-    git clone https://github.com/trailheadapps/dreaminvest
-    cd dreaminvest
+    git clone https://github.com/trailheadapps/dreaminvest-lwc
+    cd dreaminvest-lwc
     ```
 
 1. Create a scratch org and provide it with an alias (**dreaminvest** in the command below):
@@ -85,11 +86,11 @@ There are two ways to install DreamInvest:
 
 This is the recommended option for non developers. Use this option if you want to experience the sample app but do not plan to modify the code.
 
-1. [Sign up](https://www.salesforce.com/form/signup/prerelease-spring19/) for a Spring '19 prerelease org.
+1. [Sign up](https://www.salesforce.com/form/signup/prerelease-spring19/) for a Spring '19 pre-release org.
 
 1. Enable My Domain. Follow the instructions to enable My Domain [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
-1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1I0000036toLQAQ) to install the DreamInvest unlocked package into your developer edition org.
+1. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cPFfIAM) to install the DreamInvest unlocked package into your developer edition org. Approve the Third-Party access for SCP Trusted Sites during the installation process.
 
 1. Select **Install for All Users**.
 
@@ -97,7 +98,7 @@ This is the recommended option for non developers. Use this option if you want t
 
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
-    - Click the **Custom objects** tab, click **Sectors**, and click **Add New Records**.
+    - Click the **Custom objects** tab, click **Sectors**, and click **Add new records**.
     - Drag **sectors.csv** from the data folder of this project to the upload area.
     - Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
     - Click **Next**, and **Start Import**.
@@ -105,8 +106,8 @@ This is the recommended option for non developers. Use this option if you want t
 1. Load sample data (Funds):
     - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
     - Click **Launch Wizard**.
-    - Click the **Custom objects** tab, click **Funds**, and click **Add New Records**.
-    - For Which Sector field in your file specifies the Master/Detail relationship?, select **Sector Id (External ID)**.
+    - Click the **Custom objects** tab, click **Funds**, and click **Add new records**.
+    - For _Which Sector field in your file do you want to match against to set the Sector lookup field?_, select **Sector Id (External ID)**.
     - Drag **funds.csv** from the data folder of this project to the upload area.
     - Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
     - Click **Next**, and **Start Import**.
@@ -115,13 +116,13 @@ This is the recommended option for non developers. Use this option if you want t
 
 Follow the steps below to complete the installation regardless of the installation option you selected above. If you want to experience the StockService.cmp you have to obtain a free API key from [Alphavantage](https://www.alphavantage.co/support/#api-key):
 
-1. In **Setup**, type **theme** in the quick find box. Click **Themes and Branding**, click the down arrow to the right of the **Lightning Lite** theme and select **Activate**.
+1. In **Setup**, type **theme** in the Quick Find box. Click **Themes and Branding**, click the down arrow to the right of the **Lightning Lite** theme and select **Activate**.
 
 1. In **Setup** type **custom settings** in the quick find box. Click **Custom Settings**, click **Manage** besides **DreamInvest Settings**. Then click **New** (top button), and enter the Alphavantage API key. Click **Save**.
 
-1. In **App Launcher**, select the **DreamInvest** app
+1. In **App Launcher**, select the **DreamInvest** app.
 
-1. Click the **Fund Explorer** tab
+1. Click the **Fund Explorer** tab.
 
 ## Optional Installation Instructions
 
@@ -129,7 +130,7 @@ This repository contains several files that are relevant if you want to integrat
 
 ### Code formatting
 
-[Prettier](https://prettier.io 'https://prettier.io/') is a code formatter used to ensure consistent formatting across your code base. To use Prettier with Visual Studio Code, install [this extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) from the Visual Studio Code Marketplace. The [.prettierignore](/.prettierignore) and [.prettierrc](/.prettierrc) files are provided as part of this repository to control the behavior of the Prettier formatter.
+[Prettier](https://prettier.io/) is a code formatter used to ensure consistent formatting across your code base. To use Prettier with Visual Studio Code, install [this extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) from the Visual Studio Code Marketplace. The [.prettierignore](/.prettierignore) and [.prettierrc](/.prettierrc) files are provided as part of this repository to control the behavior of the Prettier formatter.
 
 ### Code linting
 
@@ -137,14 +138,14 @@ This repository contains several files that are relevant if you want to integrat
 
 ### Pre-commit hook
 
-This repository also comes with a [package.json](package.json) file that makes it easy to set up a pre-commit hook that enforces code formatting and linting by running Prettier and ESLint every time you `git commit` changes.
+This repository also comes with a [package.json](/package.json) file that makes it easy to set up a pre-commit hook that enforces code formatting and linting by running Prettier and ESLint every time you `git commit` changes.
 
 To set up the formatting and linting pre-commit hook:
 
 1. Install [Node.js](https://nodejs.org) if you haven't already done so
 2. Run `npm install` in your project's root folder to install the ESLint and Prettier modules (Note: Mac users should verify that Xcode command line tools are installed before running this command.)
 
-Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands (check out [package.json](package.json) for the full list):
+Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands (check out [package.json](/package.json) for the full list):
 
 ```
 npm run lint:lwc
