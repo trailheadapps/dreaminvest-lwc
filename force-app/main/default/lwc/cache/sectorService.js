@@ -21,5 +21,5 @@ const clearCache = () => {
 export default {
     getSectors,
     getSectorsFromCache,
-    clearCache,
+    clearCache
 };

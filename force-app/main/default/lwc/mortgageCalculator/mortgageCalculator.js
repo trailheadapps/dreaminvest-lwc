@@ -40,7 +40,7 @@ export default class MortgageCalculator extends LightningElement {
         this.monthlyPayment = mortgageUtils.calculateMonthlyPayment(
             this._principal,
             this._years,
-            this._rate,
+            this._rate
         );
     }
 
@@ -49,7 +49,7 @@ export default class MortgageCalculator extends LightningElement {
             { label: '20', value: '20' },
             { label: '25', value: '25' },
             { label: '30', value: '30' },
-            { label: '35', value: '35' },
+            { label: '35', value: '35' }
         ];
     }
 }

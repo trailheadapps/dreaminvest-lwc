@@ -22,7 +22,7 @@ export default class SearchBar extends LightningElement {
 
     fireChangeEvent() {
         const changeEvent = new CustomEvent('change', {
-            detail: this.searchKey,
+            detail: this.searchKey
         });
         this.dispatchEvent(changeEvent);
     }
