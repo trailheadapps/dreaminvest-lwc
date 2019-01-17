@@ -20,7 +20,7 @@ export default class PercentReturnRange extends LightningElement {
         this._isRendered = true;
         Promise.all([
             loadStyle(this, NO_UI_SLIDER + '/nouislider.css'),
-            loadScript(this, NO_UI_SLIDER + '/nouislider.js'),
+            loadScript(this, NO_UI_SLIDER + '/nouislider.js')
         ]).then(() => {
             const slider = this.template.querySelector('.slider');
             window.noUiSlider.create(slider, {
@@ -34,18 +34,18 @@ export default class PercentReturnRange extends LightningElement {
                     },
                     from(value) {
                         return value;
-                    },
+                    }
                 },
                 range: {
                     min: Number.parseInt(this.min, 10),
-                    max: Number.parseInt(this.max, 10),
-                },
+                    max: Number.parseInt(this.max, 10)
+                }
             });
             slider.noUiSlider.on('change', range => {
                 fireEvent(this.pageRef, 'dreaminvest__returnrangechange', {
                     filterName: this.filterName,
                     minValue: range[0].replace('%', ''),
-                    maxValue: range[1].replace('%', ''),
+                    maxValue: range[1].replace('%', '')
                 });
             });
         });

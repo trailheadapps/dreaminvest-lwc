@@ -1,6 +1,6 @@
 const getStock = (apiKey, symbol) => {
     return fetch(
-        `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`,
+        `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`
     )
         .then(response => {
             return response.json();
@@ -19,7 +19,7 @@ const getStock = (apiKey, symbol) => {
                 change: stock['Global Quote']['09. change'],
                 changePercent:
                     stock['Global Quote']['10. change percent'].slice(0, -1) /
-                    100,
+                    100
             };
             return s;
         });

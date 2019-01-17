@@ -9,8 +9,8 @@ export default class FundTile extends NavigationMixin(LightningElement) {
             type: 'standard__recordPage',
             attributes: {
                 actionName: 'view',
-                recordId: this.fund.Id,
-            },
+                recordId: this.fund.Id
+            }
         });
     }
 

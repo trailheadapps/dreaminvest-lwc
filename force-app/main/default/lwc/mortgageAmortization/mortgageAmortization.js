@@ -21,7 +21,7 @@ export default class MortgageAmortization extends LightningElement {
         this.monthlyPayment = mortgageUtils.calculateMonthlyPayment(
             this._principal,
             this._years,
-            this._rate,
+            this._rate
         );
 
         const monthlyRate = this._rate / 100 / 12;
@@ -46,7 +46,7 @@ export default class MortgageAmortization extends LightningElement {
                 cssClasses: { principal: cssPrincipal, interest: cssInterest },
                 principalY: Math.round(principalY),
                 interestY: Math.round(interestY),
-                balance: Math.round(balance),
+                balance: Math.round(balance)
             });
         }
         this.amortization = amortization;
@@ -69,7 +69,7 @@ export default class MortgageAmortization extends LightningElement {
             { label: '20', value: '20' },
             { label: '25', value: '25' },
             { label: '30', value: '30' },
-            { label: '35', value: '35' },
+            { label: '35', value: '35' }
         ];
     }
 }

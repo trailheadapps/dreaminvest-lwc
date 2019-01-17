@@ -30,7 +30,7 @@ export default class ErrorPanel extends LightningElement {
                     error &&
                     error.details &&
                     error.details.body &&
-                    error.details.body.message,
+                    error.details.body.message
             )
             .map(error => ({ message: error.details.body.message }));
     }

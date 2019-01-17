@@ -15,7 +15,7 @@ export default class FundTileList extends LightningElement {
     @wire(loadFunds, {
         filters: '$filterObjectStringified',
         pageSize: PAGE_SIZE,
-        pageNumber: '$page',
+        pageNumber: '$page'
     })
     wiredFunds;
 
@@ -28,19 +28,19 @@ export default class FundTileList extends LightningElement {
         min1YearReturn: -30,
         max1YearReturn: 30,
         min5YearReturn: -30,
-        max5YearReturn: 30,
+        max5YearReturn: 30
     };
 
     connectedCallback() {
         registerListener(
             'dreaminvest__fundfilterchange',
             this.handleFundFilterChange,
-            this,
+            this
         );
         registerListener(
             'dreaminvest__returnrangechange',
             this.handleReturnRangeChange,
-            this,
+            this
         );
     }
 

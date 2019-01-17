@@ -2,7 +2,8 @@ const calculateMonthlyPayment = (principal, years, rate) => {
     if (principal && years && rate && rate > 0) {
         const monthlyRate = rate / 100 / 12;
         const monthlyPayment =
-            (principal * monthlyRate) /
+            principal *
+            monthlyRate /
             (1 - Math.pow(1 / (1 + monthlyRate), years * 12));
         return monthlyPayment;
     }

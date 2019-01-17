@@ -21,5 +21,5 @@ const clearCache = () => {
 export default {
     getAssetClasses,
     getAssetClassesFromCache,
-    clearCache,
+    clearCache
 };

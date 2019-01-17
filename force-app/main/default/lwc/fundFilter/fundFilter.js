@@ -8,7 +8,7 @@ export default class FundFilter extends LightningElement {
     handleSearchKeyChange(event) {
         if (event.detail !== undefined) {
             fireEvent(this.pageRef, 'dreaminvest__fundfilterchange', {
-                searchKey: event.detail,
+                searchKey: event.detail
             });
         }
     }
@@ -16,7 +16,7 @@ export default class FundFilter extends LightningElement {
     handleAssetClassChange(event) {
         if (event.detail) {
             fireEvent(this.pageRef, 'dreaminvest__fundfilterchange', {
-                assetClass: event.detail.value,
+                assetClass: event.detail.value
             });
         }
     }
@@ -31,7 +31,7 @@ export default class FundFilter extends LightningElement {
                 sector = '';
             }
             fireEvent(this.pageRef, 'dreaminvest__fundfilterchange', {
-                sector,
+                sector
             });
         }
     }
