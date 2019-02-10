@@ -3,16 +3,23 @@ import stockUtils from 'c/stockUtils';
 import getStockServiceApiKey from '@salesforce/apex/StockServiceController.getStockServiceApiKey';
 
 export default class StockWidget extends LightningElement {
-    @wire(getStockServiceApiKey) apiKey;
+    @wire(getStockServiceApiKey)
+    apiKey({ error, data }) {
+        if (error) {
+            this.error = error;
+        } else if (data) {
+            this.error = undefined;
+        }
+    }
 
     @track error;
     @track stock;
     @track symbol;
 
     getStock() {
-        if (this.symbol) {
+        if (this.symbol && this.apiKey.data) {
             stockUtils
-                .getStock(this.apiKey, this.symbol)
+                .getStock(this.apiKey.data, this.symbol)
                 .then(stock => {
                     this.stock = stock;
                 })

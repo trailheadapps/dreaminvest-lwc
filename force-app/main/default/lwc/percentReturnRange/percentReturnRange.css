@@ -21,11 +21,11 @@
 
 .noUi-target,
 .noUi-handle {
-	box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .noUi-target {
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid rgb(216, 221, 230);
-    border-radius: .25rem;
+    border-radius: 0.25rem;
 }

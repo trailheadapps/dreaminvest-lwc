@@ -1,7 +1,7 @@
 :host {
     position: absolute;
-    top:-0px;
-    left:0;
+    top: -0px;
+    left: 0;
     pointer-events: none;
 }
 
@@ -10,29 +10,29 @@ section {
 }
 
 .green {
-    color: #00716B;
+    color: #00716b;
 }
 
 .red {
-    color: #C23934;
+    color: #c23934;
 }
 
 .matrix {
-    border:solid 1px #EEE;
+    border: solid 1px #eee;
     border-radius: 4px;
     margin-top: 8px;
 }
 
 .matrix .border-right {
-    border-right: solid 1px #EEE;
+    border-right: solid 1px #eee;
 }
 
 .matrix .return {
-	font-size: 23px;
+    font-size: 23px;
 }
 
 .matrix span {
-	font-size: 14px;
+    font-size: 14px;
 }
 
 .matrix .center-text {

@@ -5,13 +5,13 @@ const OFFSET_RIGHT = 70;
 
 export default class FundInfoPopup extends LightningElement {
     @track isVisible;
-    @track fund = {};
+    _fund;
     _argx;
     _argy;
 
     @api
     show(element, fund) {
-        this.fund = fund;
+        this._fund = fund;
         const rect = element.getBoundingClientRect();
         this._argx = rect.right - OFFSET_RIGHT;
         this._argy = rect.top - OFFSET_TOP;
@@ -21,6 +21,10 @@ export default class FundInfoPopup extends LightningElement {
     @api
     hide() {
         this.isVisible = false;
+    }
+
+    get fund() {
+        return this._fund;
     }
 
     get style() {
