@@ -29,16 +29,14 @@ There are two ways to install DreamInvest:
 
 ### Installing DreamInvest using Salesforce DX
 
-> **IMPORTANT**: Because of a current issue in pre-release, make sure your project path doesn't include any of the following folder names: **lwc**, **aura**, **wave**. For example, DO NOT clone this repository in a folder called **/Projects/lwc**.
-
 1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
 
-  - Sign up for a Spring '19 pre-release org and enable Dev Hub functionality
-  - Install the pre-release version of the Salesforce CLI
+  - Enable Dev Hub in your Trailhead Playground
+  - Install Salesforce CLI
   - Install Visual Studio Code
   - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
-2. Authenticate with your hub org (if not already done). The command below uses the `-a` flag to assign an alias that can be used in other commands:
+2. If you haven't already done so, authenticate with your hub org (if not already done)::
 
   ```
   sfdx force:auth:web:login -d -a myhuborg
@@ -48,7 +46,7 @@ There are two ways to install DreamInvest:
 
   ```zsh
   git clone https://github.com/trailheadapps/dreaminvest-lwc
-   cd dreaminvest-lwc
+  cd dreaminvest-lwc
   ```
 
 4. Create a scratch org and provide it with an alias (**dreaminvest** in the command below):
@@ -91,9 +89,9 @@ There are two ways to install DreamInvest:
 
 This is the recommended option for non developers. Use this option if you want to experience the sample app but do not plan to modify the code.
 
-1. [Sign up](https://www.salesforce.com/form/signup/prerelease-spring19/) for a Spring '19 pre-release org.
+1. [Sign up](https://developer.salesforce.com/signup) for a Developer Edition (DE) org.
 
-2. Enable My Domain. Follow the instructions to enable My Domain [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
+2. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
 3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000YGYUIA4) to install the DreamInvest unlocked package into your developer edition org. Approve the Third-Party access for SCP Trusted Sites during the installation process.
 
