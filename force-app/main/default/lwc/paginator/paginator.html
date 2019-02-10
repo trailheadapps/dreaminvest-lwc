@@ -1,17 +1,25 @@
 <template>
-
-        <div class="container">
-            <div class="left">
-                <template if:true={hasPreviousPage}>
-                    <lightning-button-icon icon-name="utility:left" variant="border-filled" onclick={handlePagePrevious}></lightning-button-icon>
-                </template>
-            </div>
-            <div class="centered">{total}&nbsp;{label} • page {page} of {pages}</div>
-            <div class="right">
-                <template if:true={hasMorePages}>
-                    <lightning-button-icon icon-name="utility:right" variant="border-filled" onclick={handlePageNext}></lightning-button-icon>
-                </template>
-            </div>
+    <div class="container">
+        <div class="left">
+            <template if:true={hasPreviousPage}>
+                <lightning-button-icon
+                    icon-name="utility:left"
+                    variant="border-filled"
+                    onclick={handlePagePrevious}
+                ></lightning-button-icon>
+            </template>
         </div>
-
+        <div class="centered">
+            {total}&nbsp;{label} • page {page} of {pages}
+        </div>
+        <div class="right">
+            <template if:true={hasMorePages}>
+                <lightning-button-icon
+                    icon-name="utility:right"
+                    variant="border-filled"
+                    onclick={handlePageNext}
+                ></lightning-button-icon>
+            </template>
+        </div>
+    </div>
 </template>

@@ -26,7 +26,7 @@
         "eslint": "^5.13.0",
         "husky": "^1.3.1",
         "lint-staged": "^8.1.3",
-        "prettier": "^1.16.4",
+        "prettier": "github:prettier/prettier",
         "semver": "^5.5.0"
     },
     "husky": {
@@ -35,14 +35,14 @@
         }
     },
     "lint-staged": {
-      "**/lwc/**": [
-          "prettier --write",
-          "eslint",
-          "git add"
-      ],
-      "**/aura/**": [
-          "prettier --write",
-          "git add"
-      ]
+        "**/lwc/**": [
+            "prettier --write",
+            "eslint",
+            "git add"
+        ],
+        "**/aura/**": [
+            "prettier --write",
+            "git add"
+        ]
     }
 }

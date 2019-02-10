@@ -1,15 +1,36 @@
 <template>
-
     <lightning-card title="Mortgage Calculator" icon-name="custom:custom62">
         <div class="input">
-            <lightning-input id="principal" type="number" label="Principal:" value={defaultPrincipal} onchange={handlePrincipalChange}></lightning-input>
-            <lightning-combobox name="select1" label="Years:" required onchange={handleYearChange} options={yearOptions}
-                value="20"></lightning-combobox>
-            <lightning-input id="rate" type="text" label="Rate:" value={defaultRate} onchange={handleRateChange}></lightning-input>
+            <lightning-input
+                id="principal"
+                type="number"
+                label="Principal:"
+                value={defaultPrincipal}
+                onchange={handlePrincipalChange}
+            ></lightning-input>
+            <lightning-combobox
+                name="select1"
+                label="Years:"
+                required
+                onchange={handleYearChange}
+                options={yearOptions}
+                value="20"
+            ></lightning-combobox>
+            <lightning-input
+                id="rate"
+                type="text"
+                label="Rate:"
+                value={defaultRate}
+                onchange={handleRateChange}
+            ></lightning-input>
         </div>
         <div class="result">
-            Monthly Payment: <lightning-formatted-number value={monthlyPayment} format-style="currency" currency-code="USD"></lightning-formatted-number>
+            Monthly Payment:
+            <lightning-formatted-number
+                value={monthlyPayment}
+                format-style="currency"
+                currency-code="USD"
+            ></lightning-formatted-number>
         </div>
     </lightning-card>
-
 </template>

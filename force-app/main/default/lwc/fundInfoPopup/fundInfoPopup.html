@@ -1,12 +1,19 @@
 <template>
-
     <template if:true={isVisible}>
-
-        <section id="popup" class="slds-popover slds-nubbin_left" role="dialog" style={style}>
+        <section
+            id="popup"
+            class="slds-popover slds-nubbin_left"
+            role="dialog"
+            style={style}
+        >
             <div class="slds-popover__body">
                 <lightning-layout>
                     <lightning-layout-item>
-                        <lightning-icon icon-name="utility:feed" size="small" class="popup-icon"></lightning-icon>
+                        <lightning-icon
+                            icon-name="utility:feed"
+                            size="small"
+                            class="popup-icon"
+                        ></lightning-icon>
                     </lightning-layout-item>
                     <lightning-layout-item>
                         <h3 class="slds-section__title">{fund.Name}</h3>
@@ -15,26 +22,48 @@
                 <p>Sector: {fund.Sector__r.Name}</p>
                 <p>Asset Class: {fund.Asset_Class__c}</p>
                 <lightning-layout class="matrix">
-                    <lightning-layout-item flexibility="grow" padding="around-small" class="center-text border-right">
+                    <lightning-layout-item
+                        flexibility="grow"
+                        padding="around-small"
+                        class="center-text border-right"
+                    >
                         <div class="slds-text-title">YTD</div>
-                        <p class={ytdClass}>{fund.YTD_Return__c}<span>%</span></p>
+                        <p class={ytdClass}>
+                            {fund.YTD_Return__c}<span>%</span>
+                        </p>
                     </lightning-layout-item>
-                    <lightning-layout-item flexibility="grow" padding="around-small" class="center-text border-right">
+                    <lightning-layout-item
+                        flexibility="grow"
+                        padding="around-small"
+                        class="center-text border-right"
+                    >
                         <div class="slds-text-title">1-year</div>
-                        <p class={oneYearClass}>{fund.One_Year_Return__c}<span>%</span></p>
+                        <p class={oneYearClass}>
+                            {fund.One_Year_Return__c}<span>%</span>
+                        </p>
                     </lightning-layout-item>
-                    <lightning-layout-item flexibility="grow" padding="around-small" class="center-text border-right">
+                    <lightning-layout-item
+                        flexibility="grow"
+                        padding="around-small"
+                        class="center-text border-right"
+                    >
                         <div class="slds-text-title">2-year</div>
-                        <p class={twoYearClass}>{fund.Two_Year_Return__c}<span>%</span></p>
+                        <p class={twoYearClass}>
+                            {fund.Two_Year_Return__c}<span>%</span>
+                        </p>
                     </lightning-layout-item>
-                    <lightning-layout-item flexibility="grow" padding="around-small" class="center-text">
+                    <lightning-layout-item
+                        flexibility="grow"
+                        padding="around-small"
+                        class="center-text"
+                    >
                         <div class="slds-text-title">5-year</div>
-                        <p class={fiveYearClass}>{fund.Five_Year_Return__c}<span>%</span></p>
+                        <p class={fiveYearClass}>
+                            {fund.Five_Year_Return__c}<span>%</span>
+                        </p>
                     </lightning-layout-item>
                 </lightning-layout>
             </div>
         </section>
-
     </template>
-
 </template>

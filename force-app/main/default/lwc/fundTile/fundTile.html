@@ -1,7 +1,9 @@
 <template>
-
     <li onmouseover={handleMouseOver} onmouseout={handleMouseOut}>
-        <a onclick={handleFundSelected} class="slds-app-launcher__tile slds-text-link_reset slds-truncate">
+        <a
+            onclick={handleFundSelected}
+            class="slds-app-launcher__tile slds-text-link_reset slds-truncate"
+        >
             <div class={avatarClass}>
                 <span>{fund.Abbreviation__c}</span>
             </div>
@@ -11,6 +13,5 @@
                 <c-rating rating={fund.Rating__c}></c-rating>
             </div>
         </a>
-	</li>
-
+    </li>
 </template>
