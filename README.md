@@ -36,7 +36,7 @@ There are two ways to install DreamInvest:
   - Install Visual Studio Code
   - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
-2. If you haven't already done so, authenticate with your hub org (if not already done)::
+2. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
   ```
   sfdx force:auth:web:login -d -a myhuborg
@@ -61,7 +61,7 @@ There are two ways to install DreamInvest:
   sfdx force:source:push
   ```
 
-6. Assign the dreaminvest permission set to the default user:
+6. Assign the **dreaminvest** permission set to the default user:
 
   ```zsh
   sfdx force:user:permset:assign -n dreaminvest
