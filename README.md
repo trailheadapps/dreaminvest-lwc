@@ -29,16 +29,14 @@ There are two ways to install DreamInvest:
 
 ### Installing DreamInvest using Salesforce DX
 
-> **IMPORTANT**: Because of a current issue in pre-release, make sure your project path doesn't include any of the following folder names: **lwc**, **aura**, **wave**. For example, DO NOT clone this repository in a folder called **/Projects/lwc**.
-
 1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
 
-  - Sign up for a Spring '19 pre-release org and enable Dev Hub functionality
-  - Install the pre-release version of the Salesforce CLI
+  - Enable Dev Hub in your Trailhead Playground
+  - Install Salesforce CLI
   - Install Visual Studio Code
   - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
-2. Authenticate with your hub org (if not already done). The command below uses the `-a` flag to assign an alias that can be used in other commands:
+2. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
   ```
   sfdx force:auth:web:login -d -a myhuborg
@@ -63,7 +61,7 @@ There are two ways to install DreamInvest:
   sfdx force:source:push
   ```
 
-6. Assign the dreaminvest permission set to the default user:
+6. Assign the **dreaminvest** permission set to the default user:
 
   ```zsh
   sfdx force:user:permset:assign -n dreaminvest
