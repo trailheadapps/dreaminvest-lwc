@@ -100,10 +100,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>Sector_List</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>Sector__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>

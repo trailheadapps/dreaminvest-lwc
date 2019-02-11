@@ -90,10 +90,6 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Sector_List</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
         <tab>Trader_Desktop</tab>
         <visibility>Visible</visibility>
     </tabSettings>

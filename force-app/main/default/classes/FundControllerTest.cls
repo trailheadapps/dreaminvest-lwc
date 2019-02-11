@@ -1,6 +1,6 @@
 @isTest
 public class FundControllerTest {
-    
+
     static testMethod void testGetFunds() {
         Boolean success = true;
         try {
@@ -29,15 +29,4 @@ public class FundControllerTest {
         }
     }
 
-    static testMethod void testGetAssetClasses() {
-        Boolean success = true;
-        try {
-            FundController.getAssetClasses();
-        } catch (Exception e) {
-            success = false;
-        } finally {
-	        System.assert(success);
-        }
-    }
-    
 }

@@ -101,17 +101,6 @@ global with sharing class FundController {
     }
 
     @AuraEnabled(cacheable=true)
-    public static List<String> getAssetClasses() {
-        Schema.DescribeFieldResult result = Fund__c.Asset_Class__c.getDescribe();
-        List<Schema.PicklistEntry> entries = result.getPicklistValues();
-        List<String> values = new list <String>();
-        for (Schema.PicklistEntry entry: entries) {
-            values.add(entry.getValue());
-        }
-        return values;
-    }
-
-    @AuraEnabled(cacheable=true)
     public static Sector__c[] getSectors() {
         return [SELECT Id, Name FROM Sector__c ORDER BY Name];
     }
