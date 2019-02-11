@@ -1,10 +1,10 @@
 # DreamInvest Lightning Web Components Sample Application
 
+[![CircleCI](https://circleci.com/gh/trailheadapps/dreaminvest-lwc.svg?style=svg)](https://circleci.com/gh/trailheadapps/dreaminvest-lwc)
+
 > IMPORTANT: This is the new Lightning Web Components version of the DreamInvest sample application. If you are looking for the Aura version, click [here](https://github.com/trailheadapps/dreaminvest).
 
 ![dreaminvest-logo](dreaminvest-logo.png)
-
-[![CircleCI](https://circleci.com/gh/trailheadapps/dreaminvest-lwc.svg?style=svg)](https://circleci.com/gh/trailheadapps/dreaminvest-lwc)
 
 DreamInvest is a sample financial services application. It features a mutual fund selector that illustrates standard coding practices and solutions to common problems when building applications with the Lightning Component Framework.
 
