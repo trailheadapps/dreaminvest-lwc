@@ -36,7 +36,7 @@ There are two ways to install DreamInvest:
   - Install Visual Studio Code
   - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
-2. If you haven't already done so, authenticate with your hub org (if not already done)::
+2. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
   ```
   sfdx force:auth:web:login -d -a myhuborg
@@ -61,7 +61,7 @@ There are two ways to install DreamInvest:
   sfdx force:source:push
   ```
 
-6. Assign the dreaminvest permission set to the default user:
+6. Assign the **dreaminvest** permission set to the default user:
 
   ```zsh
   sfdx force:user:permset:assign -n dreaminvest
@@ -93,7 +93,7 @@ This is the recommended option for non developers. Use this option if you want t
 
 2. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
-3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000YGYUIA4) to install the DreamInvest unlocked package into your developer edition org. Approve the Third-Party access for SCP Trusted Sites during the installation process.
+3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000KAezIAG) to install the DreamInvest unlocked package into your developer edition org. Approve the Third-Party access for SCP Trusted Sites during the installation process.
 
 4. Select **Install for All Users**.
 
