@@ -1,7 +1,7 @@
 @isTest
 public class FundControllerTest {
 
-    static testMethod void testGetFunds() {
+    @isTest static void testGetFunds() {
         Boolean success = true;
         try {
             Sector__c s = new Sector__c(Name='Test Sector');
@@ -16,7 +16,7 @@ public class FundControllerTest {
         }
     }
 
-    static testMethod void testGetSectors() {
+    @isTest static void testGetSectors() {
         Boolean success = true;
         try {
             Sector__c s = new Sector__c(Name='Test Sector');
