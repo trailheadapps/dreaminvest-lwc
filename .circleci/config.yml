@@ -171,10 +171,7 @@ workflows:
     version: 2
     build_and_test:
         jobs:
-            - setup_tooling:
-                  filters:
-                      branches:
-                          ignore: master
+            - setup_tooling
             - prettier_verify:
                   requires:
                       - setup_tooling
