@@ -8,7 +8,7 @@
         "lint:lwc": "eslint **/lwc/**",
         "lint:aura": "sfdx force:lightning:lint **/aura/** --exit",
         "prettier": "prettier --write **/*.{cmp,component,css,html,js,json,md,page,yaml,yml}",
-        "prettier:verify": "prettier --list-different **/*.{html,js,json,yaml,yml,md,cmp,page,component}",
+        "prettier:verify": "prettier --list-different **/*.{cmp,component,css,html,js,json,md,page,yaml,yml}",
         "postinstall": "node bin/check-version.js"
     },
     "author": "salesforce.com",
@@ -35,7 +35,7 @@
         }
     },
     "lint-staged": {
-        "**/*.{html,js,json,yaml,yml,md,cmp,page,component}": [
+        "**/*.{cmp,component,css,html,js,json,md,page,yaml,yml}": [
             "prettier --write"
         ],
         "**/lwc/**": [
