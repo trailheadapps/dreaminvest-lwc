@@ -12,78 +12,78 @@ DreamInvest is a sample financial services application. It features a mutual fun
 
 ## Table of contents
 
-- Installation Instructions
+-   Installation Instructions
 
-  - [Installing DreamInvest using Salesforce DX](#installing-dreaminvest-using-salesforce-dx)
-  - [Installing DreamInvest using an unlocked package](#installing-dreaminvest-using-an-unlocked-package)
-  - [Completing the Installation](#completing-the-installation)
+    -   [Installing DreamInvest using Salesforce DX](#installing-dreaminvest-using-salesforce-dx)
+    -   [Installing DreamInvest using an unlocked package](#installing-dreaminvest-using-an-unlocked-package)
+    -   [Completing the Installation](#completing-the-installation)
 
-- [Optional installation instructions](#optional-installation-instructions)
+-   [Optional installation instructions](#optional-installation-instructions)
 
 ## Installation Instructions
 
 There are two ways to install DreamInvest:
 
-- [Using Salesforce DX](#installing-dreaminvest-using-salesforce-dx): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
-- [Using an Unlocked Package](#installing-dreaminvest-using-an-unlocked-package): This option allows anybody to experience the sample app without installing a local development environment.
+-   [Using Salesforce DX](#installing-dreaminvest-using-salesforce-dx): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
+-   [Using an Unlocked Package](#installing-dreaminvest-using-an-unlocked-package): This option allows anybody to experience the sample app without installing a local development environment.
 
 ### Installing DreamInvest using Salesforce DX
 
 1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
 
-  - Enable Dev Hub in your Trailhead Playground
-  - Install Salesforce CLI
-  - Install Visual Studio Code
-  - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
+-   Enable Dev Hub in your Trailhead Playground
+-   Install Salesforce CLI
+-   Install Visual Studio Code
+-   Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
 2. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
-  ```
-  sfdx force:auth:web:login -d -a myhuborg
-  ```
+```
+sfdx force:auth:web:login -d -a myhuborg
+```
 
 3. Clone this repository:
 
-  ```zsh
-  git clone https://github.com/trailheadapps/dreaminvest-lwc
-  cd dreaminvest-lwc
-  ```
+```zsh
+git clone https://github.com/trailheadapps/dreaminvest-lwc
+cd dreaminvest-lwc
+```
 
 4. Create a scratch org and provide it with an alias (**dreaminvest** in the command below):
 
-  ```zsh
-  sfdx force:org:create -s -f config/project-scratch-def.json -a dreaminvest
-  ```
+```zsh
+sfdx force:org:create -s -f config/project-scratch-def.json -a dreaminvest
+```
 
 5. Push the app to your scratch org:
 
-  ```zsh
-  sfdx force:source:push
-  ```
+```zsh
+sfdx force:source:push
+```
 
 6. Assign the **dreaminvest** permission set to the default user:
 
-  ```zsh
-  sfdx force:user:permset:assign -n dreaminvest
-  ```
+```zsh
+sfdx force:user:permset:assign -n dreaminvest
+```
 
 7. Upload Sector data:
 
-  ```zsh
-  sfdx force:data:bulk:upsert -s Sector__c -f ./data/sectors.csv -w 1 -i Sector_Id__c
-  ```
+```zsh
+sfdx force:data:bulk:upsert -s Sector__c -f ./data/sectors.csv -w 1 -i Sector_Id__c
+```
 
 8. Upload Fund data:
 
-  ```zsh
-  sfdx force:data:bulk:upsert -s Fund__c -f ./data/funds.csv -w 1 -i Id
-  ```
+```zsh
+sfdx force:data:bulk:upsert -s Fund__c -f ./data/funds.csv -w 1 -i Id
+```
 
 9. Open the scratch org:
 
-  ```zsh
-  sfdx force:org:open -p /lightning/page/home
-  ```
+```zsh
+sfdx force:org:open -p /lightning/page/home
+```
 
 ### Installing DreamInvest using an unlocked package
 
@@ -99,22 +99,22 @@ This is the recommended option for non developers. Use this option if you want t
 
 5. Load sample data (Sectors):
 
-  - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
-  - Click **Launch Wizard**.
-  - Click the **Custom objects** tab, click **Sectors**, and click **Add new records**.
-  - Drag **sectors.csv** from the data folder of this project to the upload area.
-  - Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
-  - Click **Next**, and **Start Import**.
+-   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
+-   Click **Launch Wizard**.
+-   Click the **Custom objects** tab, click **Sectors**, and click **Add new records**.
+-   Drag **sectors.csv** from the data folder of this project to the upload area.
+-   Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
+-   Click **Next**, and **Start Import**.
 
 6. Load sample data (Funds):
 
-  - In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
-  - Click **Launch Wizard**.
-  - Click the **Custom objects** tab, click **Funds**, and click **Add new records**.
-  - For _Which Sector field in your file do you want to match against to set the Sector lookup field?_, select **Sector Id (External ID)**.
-  - Drag **funds.csv** from the data folder of this project to the upload area.
-  - Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
-  - Click **Next**, and **Start Import**.
+-   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
+-   Click **Launch Wizard**.
+-   Click the **Custom objects** tab, click **Funds**, and click **Add new records**.
+-   For _Which Sector field in your file do you want to match against to set the Sector lookup field?_, select **Sector Id (External ID)**.
+-   Drag **funds.csv** from the data folder of this project to the upload area.
+-   Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
+-   Click **Next**, and **Start Import**.
 
 ### Completing the installation
 

@@ -35,9 +35,6 @@
         }
     },
     "lint-staged": {
-        "*.{cmp,component,css,html,js,json,md,page,yaml,yml}": [
-            "prettier --write"
-        ],
         "**/*.{cmp,component,css,html,js,json,md,page,yaml,yml}": [
             "prettier --write"
         ],
