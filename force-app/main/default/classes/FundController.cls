@@ -50,17 +50,13 @@ global with sharing class FundController {
     }
 
     @AuraEnabled(cacheable=true)
-    public static PagedResult getFunds(String filters, Decimal pageSize, Decimal pageNumber) {
-        System.debug(filters);
-        Filter filter = (Filter) JSON.deserializeStrict(filters, FundController.Filter.class);
-        System.debug(filter);
+    public static PagedResult getFunds(Filter filter, Decimal pageSize, Decimal pageNumber) {
         Integer pSize = (Integer)pageSize;
         String key = '%' + filter.searchKey + '%';
         Integer offset = ((Integer)pageNumber - 1) * pSize;
         PagedResult r =  new PagedResult();
         r.pageSize = pSize;
         r.page = (Integer) pageNumber;
-        System.debug(filter.minYtdReturn);
         String assetClass = filter.assetClass;
         String sector = filter.sector;
         Decimal minYtdReturn = filter.minYtdReturn;
