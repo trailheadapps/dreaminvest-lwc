@@ -14,7 +14,7 @@ DreamInvest is a sample financial services application. It features a mutual fun
 
 -   Installation Instructions
 
-    -   [Installing DreamInvest using Salesforce DX](#installing-dreaminvest-using-salesforce-dx)
+    -   [Installing DreamInvest using a scratch org](#installing-dreaminvest-using-a-scratch-org)
     -   [Installing DreamInvest using an unlocked package](#installing-dreaminvest-using-an-unlocked-package)
     -   [Completing the Installation](#completing-the-installation)
 
@@ -24,10 +24,10 @@ DreamInvest is a sample financial services application. It features a mutual fun
 
 There are two ways to install DreamInvest:
 
--   [Using Salesforce DX](#installing-dreaminvest-using-salesforce-dx): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
+-   [Using a Scratch Org](#installing-dreaminvest-using-a-scratch-org): This is the recommended installation option. Use this option if you are a developer who wants to experience the app and the code.
 -   [Using an Unlocked Package](#installing-dreaminvest-using-an-unlocked-package): This option allows anybody to experience the sample app without installing a local development environment.
 
-### Installing DreamInvest using Salesforce DX
+### Installing DreamInvest using a Scratch Org
 
 1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
 
