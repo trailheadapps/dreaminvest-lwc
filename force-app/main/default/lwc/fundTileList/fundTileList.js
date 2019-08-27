@@ -64,6 +64,7 @@ export default class FundTileList extends LightningElement {
         if (event.sector !== undefined) {
             this._filter.sector = event.sector;
         }
+        this._filter = Object.assign({}, this._filter);
         this.page = 1;
     }
 
@@ -81,6 +82,7 @@ export default class FundTileList extends LightningElement {
             this._filter.min5YearReturn = minValue;
             this._filter.max5YearReturn = maxValue;
         }
+        this._filter = Object.assign({}, this._filter);
         this.page = 1;
     }
 
