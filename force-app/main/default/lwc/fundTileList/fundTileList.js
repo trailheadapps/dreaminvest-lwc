@@ -8,18 +8,7 @@ export default class FundTileList extends LightningElement {
     @track error;
     @track page = 1;
 
-    @track filterObjectStringified = JSON.stringify(this._filterObject);
-
-    @wire(CurrentPageReference) pageRef;
-
-    @wire(loadFunds, {
-        filters: '$filterObjectStringified',
-        pageSize: PAGE_SIZE,
-        pageNumber: '$page'
-    })
-    wiredFunds;
-
-    _filterObject = {
+    _filter = {
         searchKey: '',
         sector: '',
         assetClass: '',
@@ -30,6 +19,15 @@ export default class FundTileList extends LightningElement {
         min5YearReturn: -30,
         max5YearReturn: 30
     };
+
+    @wire(CurrentPageReference) pageRef;
+
+    @wire(loadFunds, {
+        filter: '$_filter',
+        pageSize: PAGE_SIZE,
+        pageNumber: '$page'
+    })
+    wiredFunds;
 
     connectedCallback() {
         registerListener(
@@ -58,16 +56,16 @@ export default class FundTileList extends LightningElement {
 
     handleFundFilterChange(event) {
         if (event.searchKey !== undefined) {
-            this._filterObject.searchKey = event.searchKey;
+            this._filter.searchKey = event.searchKey;
         }
         if (event.assetClass !== undefined) {
-            this._filterObject.assetClass = event.assetClass;
+            this._filter.assetClass = event.assetClass;
         }
         if (event.sector !== undefined) {
-            this._filterObject.sector = event.sector;
+            this._filter.sector = event.sector;
         }
+        this._filter = Object.assign({}, this._filter);
         this.page = 1;
-        this.filterObjectStringified = JSON.stringify(this._filterObject);
     }
 
     handleReturnRangeChange(event) {
@@ -75,17 +73,17 @@ export default class FundTileList extends LightningElement {
         const minValue = event.minValue;
         const maxValue = event.maxValue;
         if (filterName === 'ytd-return') {
-            this._filterObject.minYtdReturn = minValue;
-            this._filterObject.maxYtdReturn = maxValue;
+            this._filter.minYtdReturn = minValue;
+            this._filter.maxYtdReturn = maxValue;
         } else if (filterName === '1-year-return') {
-            this._filterObject.min1YearReturn = minValue;
-            this._filterObject.max1YearReturn = maxValue;
+            this._filter.min1YearReturn = minValue;
+            this._filter.max1YearReturn = maxValue;
         } else if (filterName === '5-year-return') {
-            this._filterObject.min5YearReturn = minValue;
-            this._filterObject.max5YearReturn = maxValue;
+            this._filter.min5YearReturn = minValue;
+            this._filter.max5YearReturn = maxValue;
         }
+        this._filter = Object.assign({}, this._filter);
         this.page = 1;
-        this.filterObjectStringified = JSON.stringify(this._filterObject);
     }
 
     handlePeekEnter(event) {

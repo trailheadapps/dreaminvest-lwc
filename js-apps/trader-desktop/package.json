@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@salesforce-ux/design-system": "^2.6.1",
-    "@salesforce/design-system-react": "^0.8.16",
+    "@salesforce/design-system-react": "^0.10.11",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "lightning-container": "^1.0.0",

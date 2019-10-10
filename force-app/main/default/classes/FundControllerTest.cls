@@ -8,7 +8,8 @@ public class FundControllerTest {
             insert s;
             Fund__c f = new Fund__c(Name='Test Fund', Sector__c=s.Id);
             insert f;
-            FundController.PagedResult result = FundController.getFunds('{}', 10, 1);
+            FundController.Filter filter = new FundController.Filter();
+            FundController.PagedResult result = FundController.getFunds(filter, 10, 1);
         } catch (Exception e) {
             success = false;
         } finally {
