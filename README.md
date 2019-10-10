@@ -95,7 +95,7 @@ This is the recommended option for non developers. Use this option if you want t
 
 2. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
 
-3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AjVVIA0) to install the DreamInvest unlocked package into your developer edition org. Approve the Third-Party access for SCP Trusted Sites during the installation process.
+3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t2E000003VpRjQAK) to install the DreamInvest unlocked package into your developer edition org. Approve the Third-Party access for SCP Trusted Sites during the installation process.
 
 4. Select **Install for All Users**.
 
