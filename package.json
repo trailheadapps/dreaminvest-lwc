@@ -7,8 +7,8 @@
         "lint": "npm run lint:lwc && npm run lint:aura",
         "lint:lwc": "eslint **/lwc/**",
         "lint:aura": "sfdx force:lightning:lint **/aura/** --exit",
-        "prettier": "prettier --write '**/*.{cmp,component,css,html,js,json,md,page,yaml,yml}'",
-        "prettier:verify": "prettier --list-different '**/*.{cmp,component,css,html,js,json,md,page,yaml,yml}'",
+        "prettier": "prettier --write '**/*.{cmp,component,css,html,js,json,md,page,xml,yaml,yml}'",
+        "prettier:verify": "prettier --list-different '**/*.{cmp,component,css,html,js,json,md,page,xml,yaml,yml}'",
         "postinstall": "node bin/check-version.js"
     },
     "author": "salesforce.com",
@@ -22,11 +22,12 @@
         "npm": ">= 6.5.0"
     },
     "devDependencies": {
+        "@prettier/plugin-xml": "^0.3.0",
         "@salesforce/eslint-config-lwc": "^0.4.0",
         "eslint": "^5.16.0",
         "husky": "^3.0.8",
         "lint-staged": "^9.4.2",
-        "prettier": "^1.18.2",
+        "prettier": "^1.19.1",
         "semver": "^6.3.0"
     },
     "husky": {
