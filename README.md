@@ -1,6 +1,6 @@
 # DreamInvest Lightning Web Components Sample Application
 
-[![Github Workflow](<https://github.com/trailheadapps/dreaminvest-lwc/workflows/Salesforce%20DX%20CI%20(scratch%20org%20only)/badge.svg>)](https://github.com/trailheadapps/dreaminvest-lwc/actions)
+[![Github Workflow](<https://github.com/trailheadapps/dreaminvest-lwc/workflows/Salesforce%20DX%20CI%20(scratch%20org%20only)/badge.svg?branch=master>)](https://github.com/trailheadapps/dreaminvest-lwc/actions)
 
 > IMPORTANT: This is the new Lightning Web Components version of the DreamInvest sample application. If you are looking for the Aura version, click [here](https://github.com/trailheadapps/dreaminvest).
 
