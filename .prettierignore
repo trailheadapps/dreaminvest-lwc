@@ -5,3 +5,4 @@
 **/staticresources/**
 .sfdx
 js-apps/trader-desktop/**
+.vscode
