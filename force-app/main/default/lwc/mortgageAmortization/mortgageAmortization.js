@@ -1,9 +1,9 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 import mortgageUtils from 'c/mortgageUtils';
 
 export default class MortgageAmortization extends LightningElement {
-    @track monthlyPayment = 0.0;
-    @track amortization;
+    monthlyPayment = 0.0;
+    amortization;
 
     _principal = 200000;
     _years = 30;
