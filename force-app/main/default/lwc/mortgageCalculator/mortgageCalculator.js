@@ -1,4 +1,4 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 import mortgageUtils from 'c/mortgageUtils';
 
 export default class MortgageCalculator extends LightningElement {
@@ -6,7 +6,7 @@ export default class MortgageCalculator extends LightningElement {
     _years = 30;
     _rate = 5;
 
-    @track monthlyPayment = 0.0;
+    monthlyPayment = 0.0;
 
     constructor() {
         super();

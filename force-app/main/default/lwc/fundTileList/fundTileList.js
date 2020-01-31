@@ -1,12 +1,12 @@
-import { LightningElement, track, wire } from 'lwc';
+import { LightningElement, wire } from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 import loadFunds from '@salesforce/apex/FundController.getFunds';
 import { registerListener, unregisterAllListeners } from 'c/pubsub';
 
 const PAGE_SIZE = 15;
 export default class FundTileList extends LightningElement {
-    @track error;
-    @track page = 1;
+    error;
+    page = 1;
 
     _filter = {
         searchKey: '',
