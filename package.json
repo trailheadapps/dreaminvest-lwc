@@ -7,8 +7,8 @@
         "lint": "npm run lint:lwc && npm run lint:aura",
         "lint:lwc": "eslint **/lwc/**",
         "lint:aura": "sfdx force:lightning:lint **/aura/** --exit",
-        "prettier": "prettier --write '**/*.{cmp,component,css,html,js,json,md,page,xml,yaml,yml,trigger,cls}'",
-        "prettier:verify": "prettier --list-different '**/*.{cmp,component,css,html,js,json,md,page,xml,yaml,yml,trigger,cls}'",
+        "prettier": "prettier --write '**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}'",
+        "prettier:verify": "prettier --list-different '**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}'",
         "postinstall": "node bin/check-version.js"
     },
     "author": "salesforce.com",
@@ -26,10 +26,10 @@
         "@salesforce/eslint-config-lwc": "^0.4.0",
         "eslint": "^5.16.0",
         "husky": "^3.1.0",
-        "lint-staged": "^9.4.2",
+        "lint-staged": "^10.0.7",
         "prettier": "^1.19.1",
         "prettier-plugin-apex": "^1.1.0",
-        "semver": "^6.3.0"
+        "semver": "^7.1.1"
     },
     "husky": {
         "hooks": {
@@ -37,7 +37,7 @@
         }
     },
     "lint-staged": {
-        "**/*.{cmp,component,css,html,js,json,md,page,yaml,yml}": [
+        "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
             "prettier --write"
         ],
         "**/lwc/**": [
