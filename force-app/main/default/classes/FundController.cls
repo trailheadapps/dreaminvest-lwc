@@ -70,7 +70,8 @@ global with sharing class FundController {
             'SELECT count() FROM Fund__c where name LIKE :key ' +
             'AND YTD_Return__c >= :minYtdReturn AND YTD_Return__c <= :maxYtdReturn ' +
             'AND One_Year_Return__c >= :min1YearReturn AND One_Year_Return__c <= :max1YearReturn ' +
-            'AND Five_Year_Return__c >= :min5YearReturn AND Five_Year_Return__c <= :max5YearReturn ';
+            'AND Five_Year_Return__c >= :min5YearReturn AND Five_Year_Return__c <= :max5YearReturn ' +
+            'WITH SECURITY_ENFORCED';
         if (!String.isBlank(filter.assetClass)) {
             countSQL = countSQL + 'AND Asset_Class__c = :assetClass ';
         }
@@ -86,7 +87,8 @@ global with sharing class FundController {
             'SELECT id, name, abbreviation__c, asset_class__c, sector__r.Name, rating__c, YTD_Return__c, One_Year_Return__c, Two_Year_Return__c, Five_Year_Return__c FROM Fund__c where name LIKE :key ' +
             'AND YTD_Return__c >= :minYtdReturn AND YTD_Return__c <= :maxYtdReturn ' +
             'AND One_Year_Return__c >= :min1YearReturn AND One_Year_Return__c <= :max1YearReturn ' +
-            'AND Five_Year_Return__c >= :min5YearReturn AND Five_Year_Return__c <= :max5YearReturn ';
+            'AND Five_Year_Return__c >= :min5YearReturn AND Five_Year_Return__c <= :max5YearReturn ' +
+            'WITH SECURITY_ENFORCED';
         if (!String.isBlank(filter.assetClass)) {
             sql = sql + 'AND Asset_Class__c = :assetClass ';
         }
