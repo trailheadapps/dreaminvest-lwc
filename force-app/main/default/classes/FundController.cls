@@ -100,6 +100,10 @@ global with sharing class FundController {
 
     @AuraEnabled(cacheable=true)
     public static Sector__c[] getSectors() {
-        return [SELECT Id, Name FROM Sector__c ORDER BY Name];
+        return [
+            SELECT Id, Name
+            FROM Sector__c WITH_SECURITY_ENFORCED
+            ORDER BY Name
+        ];
     }
 }
