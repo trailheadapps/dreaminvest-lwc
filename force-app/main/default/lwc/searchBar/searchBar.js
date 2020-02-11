@@ -1,7 +1,7 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 
 export default class SearchBar extends LightningElement {
-    @track searchKey = '';
+    searchKey = '';
 
     handleKeyPress(event) {
         this.searchKey = event.target.value;
