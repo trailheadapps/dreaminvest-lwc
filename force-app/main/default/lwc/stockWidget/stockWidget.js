@@ -1,4 +1,4 @@
-import { LightningElement, track, wire } from 'lwc';
+import { LightningElement, wire } from 'lwc';
 import stockUtils from 'c/stockUtils';
 import getStockServiceApiKey from '@salesforce/apex/StockServiceController.getStockServiceApiKey';
 
@@ -14,10 +14,10 @@ export default class StockWidget extends LightningElement {
         }
     }
 
-    @track apiKey;
-    @track error;
-    @track stock;
-    @track symbol;
+    apiKey;
+    error;
+    stock;
+    symbol;
 
     getStock() {
         if (this.symbol && this.apiKey) {
