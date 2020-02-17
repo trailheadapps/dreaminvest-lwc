@@ -4,7 +4,7 @@
             "path": "force-app",
             "default": true,
             "package": "DreamInvestLWC",
-            "versionName": "Winter '20",
+            "versionName": "Spring '20",
             "versionNumber": "3.0.0.NEXT"
         }
     ],
