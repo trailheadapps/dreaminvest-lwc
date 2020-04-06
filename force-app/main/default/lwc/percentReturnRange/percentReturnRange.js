@@ -41,7 +41,7 @@ export default class PercentReturnRange extends LightningElement {
                     max: Number.parseInt(this.max, 10)
                 }
             });
-            slider.noUiSlider.on('change', range => {
+            slider.noUiSlider.on('change', (range) => {
                 fireEvent(this.pageRef, 'dreaminvest__returnrangechange', {
                     filterName: this.filterName,
                     minValue: range[0].replace('%', ''),

@@ -23,10 +23,10 @@ export default class StockWidget extends LightningElement {
         if (this.symbol && this.apiKey) {
             stockUtils
                 .getStock(this.apiKey, this.symbol)
-                .then(stock => {
+                .then((stock) => {
                     this.stock = stock;
                 })
-                .catch(error => {
+                .catch((error) => {
                     this.error = error;
                 });
         }

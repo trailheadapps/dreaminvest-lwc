@@ -1,5 +1,5 @@
 ({
-    handleMessage: function(component, event, helper) {
+    handleMessage: function (component, event, helper) {
         var message = event.getParams();
         var watchLists = [
             ['GM', 'GE', 'MCD', 'UAL'],
@@ -13,5 +13,5 @@
         component.find('jsApp').message(msg);
     },
 
-    handleError: function(component, event, helper) {}
+    handleError: function (component, event, helper) {}
 });

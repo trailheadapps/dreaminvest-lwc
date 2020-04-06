@@ -2,10 +2,10 @@ const getStock = (apiKey, symbol) => {
     return fetch(
         `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`
     )
-        .then(response => {
+        .then((response) => {
             return response.json();
         })
-        .then(stock => {
+        .then((stock) => {
             const s = {
                 symbol: stock['Global Quote']['01. symbol'],
                 open: stock['Global Quote']['02. open'],
