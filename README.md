@@ -31,104 +31,106 @@ There are two ways to install DreamInvest:
 
 ### Installing DreamInvest using a Scratch Org
 
-1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
+1.  Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
 
--   Enable Dev Hub in your Trailhead Playground
--   Install Salesforce CLI
--   Install Visual Studio Code
--   Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
+    -   Enable Dev Hub in your Trailhead Playground
+    -   Install Salesforce CLI
+    -   Install Visual Studio Code
+    -   Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
 
-2. If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
+1.  If you haven't already done so, authenticate with your hub org and provide it with an alias (**myhuborg** in the command below):
 
-```
-sfdx force:auth:web:login -d -a myhuborg
-```
+    ```
+    sfdx force:auth:web:login -d -a myhuborg
+    ```
 
-3. Clone this repository:
+1.  Clone this repository:
 
-```zsh
-git clone https://github.com/trailheadapps/dreaminvest-lwc
-cd dreaminvest-lwc
-```
+    ```
+    git clone https://github.com/trailheadapps/dreaminvest-lwc
+    cd dreaminvest-lwc
+    ```
 
-4. Create a scratch org and provide it with an alias (**dreaminvest** in the command below):
+1.  Create a scratch org and provide it with an alias (**dreaminvest** in the command below):
 
-```zsh
-sfdx force:org:create -s -f config/project-scratch-def.json -a dreaminvest
-```
+    ```
+    sfdx force:org:create -s -f config/project-scratch-def.json -a dreaminvest
+    ```
 
-5. Push the app to your scratch org:
+1.  Push the app to your scratch org:
 
-```zsh
-sfdx force:source:push
-```
+    ```
+    sfdx force:source:push
+    ```
 
-6. Assign the **dreaminvest** permission set to the default user:
+1.  Assign the **dreaminvest** permission set to the default user:
 
-```zsh
-sfdx force:user:permset:assign -n dreaminvest
-```
+    ```
+    sfdx force:user:permset:assign -n dreaminvest
+    ```
 
-7. Upload Sector data:
+1.  Import Sector data:
 
-```zsh
-sfdx force:data:bulk:upsert -s Sector__c -f ./data/sectors.csv -w 1 -i Sector_Id__c
-```
+    ```
+    sfdx force:data:bulk:upsert -s Sector__c -f ./data/sectors.csv -w 1 -i Sector_Id__c
+    ```
 
-8. Upload Fund data:
+1.  Import Fund data:
 
-```zsh
-sfdx force:data:bulk:upsert -s Fund__c -f ./data/funds.csv -w 1 -i Id
-```
+    ```
+    sfdx force:data:bulk:upsert -s Fund__c -f ./data/funds.csv -w 1 -i Id
+    ```
 
-9. Open the scratch org:
+1.  Open the scratch org:
 
-```zsh
-sfdx force:org:open -p /lightning/page/home
-```
+    ```
+    sfdx force:org:open -p /lightning/page/home
+    ```
 
 ### Installing DreamInvest using an unlocked package
 
-This is the recommended option for non developers. Use this option if you want to experience the sample app but do not plan to modify the code.
+Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org or if you don't want to install the local developement tools. You can use a non source-tracked orgs such as a free [Developer Edition Org](https://developer.salesforce.com/signup) or a [Trailhead Playground](https://trailhead.salesforce.com/).
 
-1. [Sign up](https://developer.salesforce.com/signup) for a Developer Edition (DE) org.
+Make sure to start from a brand-new environment to avoid conflicts with previous work you may have done.
 
-2. Enable MyDomain in your DE org. Instructions to do this are [here](https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain).
+1.  Log in to your org
 
-3. Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AzjAIAS) to install the DreamInvest unlocked package into your developer edition org. Approve the Third-Party access for SCP Trusted Sites during the installation process.
+1.  If you are setting up a Developer Edition: go to **Setup**, under **My Domain**, [register a My Domain](https://help.salesforce.com/articleView?id=domain_name_setup.htm&type=5).
 
-4. Select **Install for All Users**.
+1.  Click [this link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000AzjAIAS) to install the DreamInvest unlocked package into your developer edition org. Approve the Third-Party access for SCP Trusted Sites during the installation process.
 
-5. Load sample data (Sectors):
+1.  Select **Install for All Users**.
 
--   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
--   Click **Launch Wizard**.
--   Click the **Custom objects** tab, click **Sectors**, and click **Add new records**.
--   Drag **sectors.csv** from the data folder of this project to the upload area.
--   Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
--   Click **Next**, and **Start Import**.
+1.  Import Sector data:
 
-6. Load sample data (Funds):
+    -   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
+    -   Click **Launch Wizard**.
+    -   Click the **Custom objects** tab, click **Sectors**, and click **Add new records**.
+    -   Drag **sectors.csv** from the data folder of this project to the upload area.
+    -   Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
+    -   Click **Next**, and **Start Import**.
 
--   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
--   Click **Launch Wizard**.
--   Click the **Custom objects** tab, click **Funds**, and click **Add new records**.
--   For _Which Sector field in your file do you want to match against to set the Sector lookup field?_, select **Sector Id (External ID)**.
--   Drag **funds.csv** from the data folder of this project to the upload area.
--   Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
--   Click **Next**, and **Start Import**.
+1.  Import Fund data:
+
+    -   In **Setup**, type **Data Import** in the Quick Find box and click **Data Import Wizard**.
+    -   Click **Launch Wizard**.
+    -   Click the **Custom objects** tab, click **Funds**, and click **Add new records**.
+    -   For _Which Sector field in your file do you want to match against to set the Sector lookup field?_, select **Sector Id (External ID)**.
+    -   Drag **funds.csv** from the data folder of this project to the upload area.
+    -   Click **Next**. Use the mapping wizard to map any unmapped fields. The source CSV shows the API names of the fields.
+    -   Click **Next**, and **Start Import**.
 
 ### Completing the installation
 
-Follow the steps below to complete the installation regardless of the installation option you selected above. If you want to experience the StockService.cmp you have to obtain a free API key from [Alphavantage](https://www.alphavantage.co/support/#api-key):
+Follow the steps below to complete the installation regardless of the installation option you selected above. If you want to experience the `StockService.cmp` you have to obtain a free API key from [Alphavantage](https://www.alphavantage.co/support/#api-key):
 
 1. In **Setup**, type **theme** in the Quick Find box. Click **Themes and Branding**, click the down arrow to the right of the **Lightning Lite** theme and select **Activate**.
 
-2. In **Setup** type **custom settings** in the quick find box. Click **Custom Settings**, click **Manage** besides **DreamInvest Settings**. Then click **New** (top button), and enter the Alphavantage API key. Click **Save**.
+1. In **Setup** type **custom settings** in the quick find box. Click **Custom Settings**, click **Manage** besides **DreamInvest Settings**. Then click **New** (top button), and enter the Alphavantage API key. Click **Save**.
 
-3. In **App Launcher**, select the **DreamInvest** app.
+1. In **App Launcher**, select the **DreamInvest** app.
 
-4. Click the **Fund Explorer** tab.
+1. Click the **Fund Explorer** tab.
 
 ## Optional Installation Instructions
 
@@ -149,7 +151,7 @@ This repository also comes with a [package.json](/package.json) file that makes 
 To set up the formatting and linting pre-commit hook:
 
 1. Install [Node.js](https://nodejs.org) if you haven't already done so
-2. Run `npm install` in your project's root folder to install the ESLint and Prettier modules (Note: Mac users should verify that Xcode command line tools are installed before running this command.)
+1. Run `npm install` in your project's root folder to install the ESLint and Prettier modules (Note: Mac users should verify that Xcode command line tools are installed before running this command.)
 
 Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands (check out [package.json](/package.json) for the full list):
 
